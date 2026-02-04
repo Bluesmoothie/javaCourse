@@ -13,6 +13,14 @@
 	- [4. Main function](#4-main-function)
 	- [5. Comment](#5-comment)
 	- [6. Compiling and executing](#6-compiling-and-executing)
+	- [7. Access control](#7-access-control)
+	- [8. Loops](#8-loops)
+		- [8.1 For loops](#81-for-loops)
+			- [8.1.1 For each loops](#811-for-each-loops)
+		- [8.2 While loops](#82-while-loops)
+			- [8.2.1 Do while loops](#821-do-while-loops)
+		- [8.3 Continue](#83-continue)
+		- [8.4 Break](#84-break)
 
 ## 1. Variables
 
@@ -64,11 +72,16 @@ public class    myClass {
 
 ## 3. Packages
 
+A package is a group of classes
+
+Declare a package with ```package```:
+
 ```java
 package myPackage;
 ```
 
-Use this at the start of each file to name your package
+> [!IMPORTANT]
+> This is the first line of every ```.java``` file
 
 > [!IMPORTANT]
 > The package and classes names follow the path  
@@ -81,7 +94,7 @@ Use this at the start of each file to name your package
 The main class will be the entrypoint of your program
 
 ```java
-public static void	main(String[] args) {
+public static void main(String[] args) {
 
 }
 ```
@@ -103,3 +116,73 @@ javac helloWorld
 java helloWorld.helloWorld
 > Hello World!
 ```
+
+## 7. Access control
+
+| Keyword           | Access level            |
+|-------------------|-------------------------|
+| public            | Program                 |
+| protected         | Package and sub classes |
+| package-protected | Package only            |
+| private           | Class only              |
+
+> [!NOTE]
+> If not precised, the element get the access level of it's parent
+
+## 8. Loops
+
+### 8.1 For loops
+
+```java
+for(int i = 0; i < 10; ++i) {
+     whatever();
+}
+```
+
+Execute whatever 10 times
+
+#### 8.1.1 For each loops
+
+```java
+for(int num: numArray) {
+     whatever(num);
+}
+```
+
+Execute whatever for each number in ```numArray```
+
+### 8.2 While loops
+
+```java
+while(condition()) {
+     whatever();
+}
+```
+
+Execute whatever as long as ```condition()``` return is not 0
+
+#### 8.2.1 Do while loops
+
+```java
+do {
+     whatever();
+} while (condition());
+```
+
+Same as ```while``` but evaluate the condition after the loop
+
+### 8.3 Continue
+
+```java
+continue;
+```
+
+Go to the next loop iteration, ignoring if there is other instructions below
+
+### 8.4 Break
+
+```java
+break;
+```
+
+Stop the loop prematurely
